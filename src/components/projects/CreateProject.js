@@ -17,7 +17,8 @@ class CreateProject extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state)
+        // console.log(this.state)
+        this.props.createProject(this.state)
     }
 
     render() {
@@ -47,10 +48,12 @@ class CreateProject extends Component {
     }
 }
 
-const MapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return{
         createProject: (project) => dispatch(createProject(project))
     }
 }
 
-export default connect()(CreateProject);
+export default connect(null, mapDispatchToProps)(CreateProject);    // The first parameter of connect function must be 
+                                                                    // 'mapStateToProps' but in this component isn't used, so
+                                                                    // is used a null instead.
