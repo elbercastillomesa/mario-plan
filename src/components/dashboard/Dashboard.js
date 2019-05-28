@@ -30,8 +30,7 @@ class Dashboard extends Component {
 const mapStateToProps = (state) => {
     console.log(state);
     return{
-        projects: state.project.projects    // the state is imported , then project belongs to rootReducer, 
-                                            // at last projects property from the projectReducer
+        projects: state.firestore.ordered.projects  // now the data is imported from google's firestore
     }
 }
 
