@@ -1,10 +1,20 @@
 import React from 'react';
 import ProjectSummary from './ProjectSummary';
 
-const ProjectList = () => {
+const ProjectList = ({projects}) => {
     return (
         <div className="project-list section">
-            <ProjectSummary />
+            
+            {
+                projects && projects.map( //The ampersan is used to evaluate if there's projects to implement the map
+                    project => {
+                        return(
+                            <ProjectSummary project={project} key={project.id} />
+                        )
+
+                    }
+                )
+            }
 
         </div>
     )
