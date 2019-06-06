@@ -12,6 +12,10 @@ const ProjectDetails = (props)  => {
 
     if(project){
 
+        var date = new Date(project.createdAt.seconds*1000);
+        var formattedTime = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay() +
+                     ' ' + date.getHours() + ':' + ("0" + date.getMinutes()).substr(-2);
+
         return(
             <div className="container section project-details">
                 <div className="card z-depth-0">
@@ -21,7 +25,7 @@ const ProjectDetails = (props)  => {
                     </div>
                     <div className="card-action grey lighten-4 grey-text">
                         <div>Posted by { project.authorFirstName } { project.authorLastName }</div>
-                        <div>24th May, 21:36</div>
+                        <div>{ formattedTime }</div>
                     </div>
                 </div>
             </div>
