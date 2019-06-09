@@ -28,7 +28,6 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.firestore.ordered.notifications);
     return{
         projects: state.firestore.ordered.projects,  // now the data is imported from google's firestore
         auth: state.firebase.auth,
