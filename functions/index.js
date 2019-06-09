@@ -26,7 +26,6 @@ exports.projectCreated = functions.firestore
                     user: `${project.authorFirstName} ${project.authorLastName}`,
                     time: admin.firestore.FieldValue.serverTimestamp()
                 }
-
                 return createNotification(notification);
 });
 
